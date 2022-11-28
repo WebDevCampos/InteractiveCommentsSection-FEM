@@ -12,9 +12,10 @@ fetch("../data.json")
     });
 
     const cardScores = document.querySelectorAll(".score__value");
-    cardScores.forEach((item) => {
-      item.textContent = allScores;
-    });
+
+    for (let score of allScores) {
+      cardScores.forEach((item, index) => (item.textContent = score[index]));
+    }
   });
 
 // const avatars = document.querySelectorAll(".avatar");
