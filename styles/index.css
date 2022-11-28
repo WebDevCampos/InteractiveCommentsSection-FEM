@@ -31,8 +31,6 @@ main {
   margin: 3rem 0;
 }
 
-.comment__card--score {
-}
 .comment__card--score div {
   display: flex;
   justify-content: space-between;
@@ -43,8 +41,6 @@ main {
 .comment__card--info {
   display: flex;
   justify-content: space-between;
-}
-.comment__card--content {
 }
 
 date {
