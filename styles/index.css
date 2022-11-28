@@ -16,6 +16,39 @@
 }
 body {
   font-family: var(--font);
+  max-width: 144rem;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+main {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.comment__card {
+  display: flex;
+  box-shadow: 0 0 10px var(--dark-blue);
+  margin: 3rem 0;
+}
+
+.comment__card--score {
+}
+.comment__card--score div {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+  height: 100%;
+  align-items: center;
+}
+.comment__card--info {
+  display: flex;
+  justify-content: space-between;
+}
+.comment__card--content {
+}
+
+date {
+  font-size: 1.6rem;
 }
 .attribution {
   font-size: 1.1rem;
@@ -23,4 +56,10 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 60rem) {
+  .comment__card--score {
+    display: none;
+  }
 }
