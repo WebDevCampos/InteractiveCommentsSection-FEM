@@ -35,12 +35,18 @@ main {
   display: flex;
   justify-content: space-between;
   flex-flow: column;
+
   height: 100%;
   align-items: center;
 }
-.comment__card--info {
+.comment__card--info,
+.comment__card--info div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.comment__card--info div img {
+  max-width: 5rem;
 }
 
 date {

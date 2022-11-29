@@ -1,7 +1,22 @@
 fetch("../data.json")
   .then((res) => res.json())
   .then((data) => {
+    const cardScores = document.querySelectorAll(".score__value");
+    const avatars = document.querySelectorAll(".avatar");
+    const usernames = document.querySelectorAll(".comment__card--user-name");
+    const dateCreated = document.querySelectorAll(".date__created");
     let allScores = [];
+    let allImages = [];
+    let allNames = [];
+    let allDates = [];
+
+    data.comments.map((item) => {
+      allImages.push(item.user.image.png);
+      item.replies.map((item) => {
+        allImages.push(item.user.image.png);
+        console.log(allImages);
+      });
+    });
 
     data.comments.map((item) => {
       allScores.push(item.score);
@@ -11,9 +26,29 @@ fetch("../data.json")
       console.log(allScores);
     });
 
-    const cardScores = document.querySelectorAll(".score__value");
+    data.comments.map((item) => {
+      allNames.push(item.user.username);
+      item.replies.map((item) => {
+        allNames.push(item.user.username);
+        console.log(allNames);
+      });
+    });
 
+    data.comments.map((item) => {
+      allDates.push(item.createdAt);
+      item.replies.map((item) => {
+        allDates.push(item.createdAt);
+        console.log(allNames);
+      });
+    });
+
+    avatars.forEach((item, index) =>
+      item.setAttribute("src", `${allImages[index]}`)
+    );
     cardScores.forEach((item, index) => (item.textContent = allScores[index]));
+
+    usernames.forEach((item, index) => (item.textContent = allNames[index]));
+    dateCreated.forEach((item, index) => (item.textContent = allDates[index]));
   });
 
 // const avatars = document.querySelectorAll(".avatar");
